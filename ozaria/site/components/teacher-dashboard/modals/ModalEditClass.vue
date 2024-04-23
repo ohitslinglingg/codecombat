@@ -461,7 +461,7 @@ export default Vue.extend({
           </div>
         </div>
         <div
-          v-if="isCodeCombat"
+          v-if="isCodeCombat && !classroomInstance.isNew()"
           class="form-group row"
         >
           <div class="col-xs-12">
@@ -479,7 +479,10 @@ export default Vue.extend({
             </div>
           </div>
         </div>
-        <div class="form-group row autoComplete">
+        <div
+          v-if="isCodeCombat && !classroomInstance.isNew()"
+          class="form-group row autoComplete"
+        >
           <div class="col-xs-12">
             <label for="liveCompletion">
               <span class="control-label"> {{ $t('courses.classroom_live_completion') }}</span>
@@ -545,7 +548,7 @@ export default Vue.extend({
           </div>
         </div>
         <div
-          v-if="isCodeCombat"
+          v-if="isCodeCombat && !classroomInstance.isNew()"
           class="form-group row"
         >
           <div class="col-xs-12">
@@ -618,7 +621,7 @@ export default Vue.extend({
           </div>
         </div>
         <div
-          v-if="isCodeCombat || me.isCodeNinja()"
+          v-if="(isCodeCombat && !classroomInstance.isNew()) || me.isCodeNinja()"
           class="form-group row"
         >
           <div class="col-md-12">
@@ -687,7 +690,7 @@ export default Vue.extend({
           </div>
         </div>
         <div
-          v-if="isCodeCombat || me.isCodeNinja()"
+          v-if="(isCodeCombat && !classroomInstance.isNew()) || me.isCodeNinja()"
           class="form-group row"
         >
           <div class="col-xs-12">
@@ -714,7 +717,7 @@ export default Vue.extend({
           </div>
         </div>
         <div
-          v-if="isCodeCombat && !me.isCodeNinja()"
+          v-if="(isCodeCombat && !classroomInstance.isNew())&& !me.isCodeNinja()"
           class="form-group row"
         >
           <div class="col-sm-12">
